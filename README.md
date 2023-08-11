@@ -6,19 +6,19 @@
   <img src="images/7.png" width="150" />
 </p>
 
-# Compilation
+## Compilation
 
 To compile, you need GLFW and CMake installed on your system.
 <br>
 If above requirements are fulfilled, just run the following.
 ```
 mkdir build && cd build
-CXX=clang++ cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
-ninja
-./VerletBalls
+CXX=clang++ cmake -DCMAKE_BUILD_TYPE=Release ..
+make
+./raytracer
 ```
 ## This project is under development
-## What's Next
+### What's Next
 - Implement textures
 - Integrate BVH (Bounding Volume Hierarchy)
 - Implement BRDF lighting
