@@ -1,0 +1,25 @@
+# Path Tracer
+
+<p align="middle">
+  <img src="images/1.png" width="150" />
+  <img src="images/4.png" width="150" /> 
+  <img src="images/7.png" width="150" />
+</p>
+
+# Compilation
+
+To compile, you need GLFW and CMake installed on your system.
+<br>
+If above requirements are fulfilled, just run the following.
+```
+mkdir build && cd build
+CXX=clang++ cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
+ninja
+./VerletBalls
+```
+## This project is under development
+## What's Next
+- Implement textures
+- Integrate BVH (Bounding Volume Hierarchy)
+- Implement BRDF lighting
+- Anything else that catches my fancy
