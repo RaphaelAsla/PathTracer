@@ -12,6 +12,7 @@ To compile, you need GLFW and CMake installed on your system.
 <br>
 If above requirements are fulfilled, just run the following.
 ```
+git clone --recursive https://github.com/RaphaelAsla/PathTracer.git
 mkdir build && cd build
 CXX=clang++ cmake -DCMAKE_BUILD_TYPE=Release ..
 make
