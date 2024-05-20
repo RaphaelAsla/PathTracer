@@ -1,7 +1,6 @@
 #pragma once
 
 #include <glm/gtc/matrix_transform.hpp>
-#include <iostream>
 
 #include "hit_record.hpp"
 #include "ray.hpp"
@@ -73,7 +72,7 @@ struct Dielectric {
 
     Dielectric(float index_of_refraction) : ir(index_of_refraction) {}
 
-    Color emitted() {
+    Color emitted() const {
         return Color{0};
     }
 

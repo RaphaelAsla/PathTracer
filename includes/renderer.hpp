@@ -28,7 +28,8 @@ struct Renderer {
     int entity_id = 0;
 
     std::vector<Color> pixels;
-    std::vector<std::thread> threads{std::thread::hardware_concurrency() * 3};
+    // Maybe not the best practice to multiply this by 4 but seems like its working
+    std::vector<std::thread> threads{std::thread::hardware_concurrency() * 4};
 
     using Objects = std::tuple<Sphere, Box>;
     using Materials = std::tuple<Metal, Lambertian, DiffuseLight, Dielectric>;
@@ -119,7 +120,7 @@ struct Renderer {
         bool scatter;
 
         std::visit(
-            [&](auto& mat) {
+            [&](const auto& mat) {
                 emitted = mat.emitted();
                 scatter = mat.scatter(ray, rec, attenuation, scattered);
             },

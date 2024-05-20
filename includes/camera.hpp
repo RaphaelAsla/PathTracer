@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 #include "ray.hpp"
 #include "utils.hpp"
 

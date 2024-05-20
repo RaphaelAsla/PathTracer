@@ -18,16 +18,11 @@ template <typename... Shapes, typename... Materials>
 struct Scene<std::tuple<Shapes...>, std::tuple<Materials...>> {
     Scene() = default;
 
-    void clear() {}
-
     template <typename Shape, typename Mat>
     void add(const Shape& shape, const Mat& material) {
-        int shape_idx = shapes.size();
-        int material_idx = materials.size();
-        Object object{shape_idx, material_idx};
+        objects.emplace_back(shapes.size(), materials.size());
         shapes.emplace_back(shape);
         materials.emplace_back(material);
-        objects.emplace_back(object);
     }
 
     bool Hit(const Ray& ray, float t_min, float t_max, hit_record& rec) {
