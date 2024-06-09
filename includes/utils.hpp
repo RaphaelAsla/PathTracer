@@ -13,7 +13,7 @@ static std::uniform_real_distribution<float> norm01{0.f, 1.f};
 static std::uniform_real_distribution<float> norm11{-1.f, 1.f};
 
 const double infinity = std::numeric_limits<double>::infinity();
-const double pi = 3.1415926535897932385;
+const double pi = std::numbers::pi;
 
 static uint32_t GRSEED = 0;
 

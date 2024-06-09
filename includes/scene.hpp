@@ -6,16 +6,20 @@
 #include "material.hpp"
 #include "shapes.hpp"
 
-struct Object {
-    int shape_idx;
-    int mat_idx;
-};
-
 template <typename TupleOne, typename TupleTwo>
 struct Scene;
 
 template <typename... Shapes, typename... Materials>
 struct Scene<std::tuple<Shapes...>, std::tuple<Materials...>> {
+    struct Object {
+        int shape_idx;
+        int mat_idx;
+    };
+
+    std::vector<Object> objects;
+    std::vector<std::variant<Shapes...>> shapes;
+    std::vector<std::variant<Materials...>> materials;
+
     Scene() = default;
 
     template <typename Shape, typename Mat>
@@ -45,8 +49,4 @@ struct Scene<std::tuple<Shapes...>, std::tuple<Materials...>> {
 
         return hit_anything;
     }
-
-    std::vector<Object> objects;
-    std::vector<std::variant<Shapes...>> shapes;
-    std::vector<std::variant<Materials...>> materials;
 };
