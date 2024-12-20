@@ -18,9 +18,4 @@ CXX=clang++ cmake -DCMAKE_BUILD_TYPE=Release ..
 make
 ./raytracer
 ```
-## This project is under development
-### What's Next
-- Implement textures
-- Integrate BVH (Bounding Volume Hierarchy)
-- Implement BRDF lighting
-- Anything else that catches my fancy
+## This project is discontinued in favor of [Nexavey](https://github.com/RaphaelAsla/Nexavey) which will include it's own ray tracer.

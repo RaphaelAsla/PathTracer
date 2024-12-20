@@ -44,6 +44,7 @@ struct Renderer {
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
         glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+
         window = glfwCreateWindow(width, height, "Ray Tracing", nullptr, nullptr);
 
         // Setup OpenGL
